@@ -37,30 +37,30 @@ function parse() {
         console.log(keyword)
         if (acceptable.includes(keyword) && lines != "" && line[line.length - 1] == "#") {
             if (keyword == "TITLE") {
-                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-2xl">${line.slice(6, -2)}</h1>`)
+                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-3xl">${line.slice(6, -2)}</h1>`)
             } 
             else if (keyword == "SUBTITLE" && line[line.length - 1] == "#") {
-                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-xl">${line.slice(9, -2)}</h1>`)
+                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-2xl">${line.slice(9, -2)}</h1>`)
             }
             else if (keyword == "SMT") {
-                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-lg">${line.slice(3, -2)}</h1>`)
+                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-xl">${line.slice(3, -2)}</h1>`)
             }
             else if (keyword == "BP") {
-                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-1/2xl">• ${line.slice(3, -2)}</h1>`)
+                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-lg">• ${line.slice(3, -2)}</h1>`)
             }
             else if (keyword == "BL") {
-                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-1/2xl font-bold">${line.slice(3, -2)}</h1>`)
+                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-lg font-bold">${line.slice(3, -2)}</h1>`)
             }
             else if (keyword == "L") {
                 read.insertAdjacentHTML("beforeend",`<hr class="border-gray-900">`)
             }
             else if (keyword == "W") {
-               read.insertAdjacentHTML("beforeend",`<h1 class="text-red-500 text-1/2xl font-bold">${line.slice(2, -2)}</h1>`) 
+               read.insertAdjacentHTML("beforeend",`<h1 class="text-red-500 text-lg font-bold">${line.slice(2, -2)}</h1>`) 
             }
         }
         
         else {
-            read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-3sm">${line}</h1>`)
+            read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-lg">${line}</h1>`)
         }
     }
 }
