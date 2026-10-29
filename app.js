@@ -1,6 +1,6 @@
 const write = document.querySelector("#write")
 const read = document.querySelector("#read")
-acceptable = ["TITLE", "SUBTITLE", "TEXT", "BP", "=", "BL", "L", "SMT", "W"]
+acceptable = ["TITLE", "SUBTITLE", "BP", "=", "BL", "L", "SMT", "W", "N", "IL"]
 write.value = `TITLE How To Use Easy Markdown #
 
 SUBTITLE Basic Syntax #
@@ -10,12 +10,25 @@ L #
 SUBTITLE All Features #
 BP TITLE: Creates a title #
 BP SUBTITLE: Creates a subtitle #
+BP SMT: Creates a small title
 BP BP: add a bullet point #
 BP BL: Make a line bold #
+BP IL: Make a line italic #
 BP L: Create a separator #
 BP W: Add a warning #
+BP N: Add a note #
 BP Or use no identifier for plain text #
 BP You may add a comment with '=' #
+L #
+TITLE Title #
+SUBTITLE Subtitle #
+SMT Small Title #
+Body Text #
+BP Bullet Point #
+W Warning #
+N Note #
+IL Italics #
+L #
 
 
 
@@ -25,7 +38,7 @@ BP You may add a comment with '=' #
 
 
 
-W Still in very early stages of development, expect changes or additions later on. #
+N Still in very early stages of development, expect changes or additions later on. #
 
 v1.0.0`
 function parse() {
@@ -56,6 +69,12 @@ function parse() {
             }
             else if (keyword == "W") {
                read.insertAdjacentHTML("beforeend",`<h1 class="text-red-500 text-lg font-bold">${line.slice(2, -2)}</h1>`) 
+            }
+            else if (keyword == "N") {
+               read.insertAdjacentHTML("beforeend",`<h1 class="text-green-500 text-lg font-bold">${line.slice(2, -2)}</h1>`) 
+            }
+            else if (keyword == "IL") {
+                read.insertAdjacentHTML("beforeend",`<h1 class="text-gray-900 text-lg italic">${line.slice(3, -2)}</h1>`)
             }
         }
         
