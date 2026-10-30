@@ -32,6 +32,7 @@ L #
 
 
 C v1.2 #`
+parse()
 write.value = current
 write.addEventListener("input", () => {
     localStorage.setItem("text", write.value)
